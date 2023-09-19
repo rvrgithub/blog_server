@@ -7,16 +7,19 @@ dotenv.config();
 exports.Connection = () => {
   try {
     mongoose
-    .connect(process.env.MONGOOSE_URL, {
-      useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    })
-    .then((data) => {
-      console.log("connection is successfull");
-    })
-    .catch((err) => {
-      console.log("No connection", err);
-    });
+      .connect(
+        "mongodb+srv://rvramayra1998:radhika123@cluster0.znghfbg.mongodb.net/myblog",
+        {
+          useNewUrlParser: true,
+          // useUnifiedTopology: true,
+        }
+      )
+      .then((data) => {
+        console.log("connection is successfull");
+      })
+      .catch((err) => {
+        console.log("No connection", err);
+      });
   } catch (error) {
     console.log("No connection", error);
   }
